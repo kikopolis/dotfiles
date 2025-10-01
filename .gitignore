@@ -1,7 +1,5 @@
-# Ignore everything by default
-
 !.gitignore
 !README.md
-
-!nvim
-
+.DS_Store
+smug/smug.log
+iterm2/

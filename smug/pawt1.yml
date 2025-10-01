@@ -1,0 +1,27 @@
+session: pineapple_wt_1
+
+root: ~/git/pineapple_wt_1
+
+before_start:
+  - ./vendor/bin/sail up -d
+
+stop:
+  - ./vendor/bin/sail down
+
+windows:
+  - name: shell
+    selected: true
+    layout: main-vertical
+    commands:
+      - clear
+  - name: automated
+    layout: tiled
+    commands: 
+      - ./vendor/bin/sail npm run dev
+    panes:
+      - commands:
+          - ./vendor/bin/sail php artisan reverb:start
+      - commands:
+          - ./vendor/bin/sail php artisan horizon
+      - commands:
+          - ./vendor/bin/sail php artisan schedule:work
