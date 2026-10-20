@@ -1,0 +1,3 @@
+# Global markdownlint config, passed to markdownlint-cli2 via lua/plugins/markdown.lua
+MD013:
+  line_length: 140

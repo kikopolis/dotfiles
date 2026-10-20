@@ -1,0 +1,11 @@
+# Used only for projects without their own .sqlfluff.
+[sqlfluff]
+# One of: mysql, postgres, sqlite, ansi, ...
+dialect = mysql
+max_line_length = 120
+
+[sqlfluff:indentation]
+tab_space_size = 4
+
+[sqlfluff:rules:capitalisation.keywords]
+capitalisation_policy = upper

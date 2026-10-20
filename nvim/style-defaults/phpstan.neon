@@ -1,0 +1,4 @@
+# Used only for projects without their own phpstan.neon / phpstan.neon.dist / phpstan.dist.neon.
+# Project extensions (larastan etc.) are not available here, so keep the level moderate.
+parameters:
+    level: 5
