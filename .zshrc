@@ -27,10 +27,12 @@ fi
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # zsh
-alias openzs="open ~/.zshrc"
+alias openzs="vi ~/.zshrc"
+alias vizs="vi ~/.zshrc"
 alias sourcezs="source ~/.zshrc"
 
 # Docker
+alias dcbn="docker compose build --no-cache"
 alias dcb="docker compose build"
 alias dcu="docker compose up -d"
 alias dcd="docker compose down"
@@ -70,10 +72,17 @@ alias scpint="sail composer p"
 alias sctest="sail php artisan test"
 alias snrd="sail npm run dev"
 alias spar="sail php artisan reverb:start"
+alias sbnsud="sail build --no-cache && sail up -d"
 
 # Shell aliases
 alias ls='eza --icons -F -H --group-directories-first --git -1'
 alias ll='ls -alF'
+alias legup='docker-compose -f docker-compose-kubernetes.yml up -d'
+alias legdown='docker-compose -f docker-compose-kubernetes.yml down'
+
+# Claude aliases
+alias claude-work='CLAUDE_CONFIG_DIR="$HOME/.claude-work/" claude'
+alias claude-personal='CLAUDE_CONFIG_DIR="$HOME/.claude-personal/" claude'
 
 # functions
 function sctestf() {
@@ -85,3 +94,6 @@ function sctestf() {
     fi
 }
 eval "$(starship init zsh)"
+
+unsetopt correct_all
+export PATH="$HOME/.local/bin:$PATH"

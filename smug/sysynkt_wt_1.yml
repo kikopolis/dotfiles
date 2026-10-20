@@ -1,0 +1,21 @@
+session: sysynkt_wt_1
+
+root: ~/git/sysynkt_wt_1
+
+before_start:
+  - docker-compose up -d
+
+stop:
+  - docker-compose down
+
+windows:
+  - name: app
+    shell: 
+    layout: tiled
+    panes:
+      - commands:
+         - docker compose logs -f php-fpm-nginx
+      - commands:
+         - docker compose logs -f mysql
+      - commands:
+         - docker compose logs -f notifier
